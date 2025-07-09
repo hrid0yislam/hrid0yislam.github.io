@@ -144,7 +144,7 @@ Update your information in `index.html`:
 
 - **Email**: hridoyislam@hotmail.com
 - **Phone**: +47 465 81 309
-- **LinkedIn**: [linkedin.com/in/hrd0islam](http://www.linkedin.com/in/hrd0islam)
+- **LinkedIn**: [linkedin.com/in/hrid0yislam](https://www.linkedin.com/in/hrid0yislam/)
 - **GitHub**: [github.com/hrid0yislam](https://github.com/hrid0yislam)
 - **Location**: Narvik, Norway
 

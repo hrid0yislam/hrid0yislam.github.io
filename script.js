@@ -407,7 +407,7 @@ window.addEventListener('scroll', debouncedScrollHandler);
 console.log(`
 🚀 Portfolio Website by MD Daudul Islam Bhuiyan Redoy
 📧 hridoyislam@hotmail.com
-🔗 linkedin.com/in/hrd0islam
+🔗 linkedin.com/in/hrid0yislam
 ⚡ Electrical Engineer & Research Assistant
 `);
 
