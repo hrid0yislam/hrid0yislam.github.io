@@ -336,11 +336,140 @@ section {
     letter-spacing: 1px;
 }
 
-/* Education Section */
-.education-timeline {
+/* Experience Section Styles */
+.experience {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.experience-subsection {
+    margin-bottom: 60px;
+}
+
+.experience-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.subsection-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
     position: relative;
-    max-width: 800px;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.card-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.card-date {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.experience-card h4 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.card-list li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.card-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Education Section Styles */
+.education {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.education-timeline {
+    max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
 .education-timeline::before {
@@ -348,15 +477,14 @@ section {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
-    bottom: 0;
     width: 2px;
-    background: var(--accent-color);
+    height: 100%;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
 }
 
 .timeline-item {
     display: flex;
-    margin-bottom: 3rem;
+    margin-bottom: 60px;
     position: relative;
 }
 
@@ -364,16 +492,25 @@ section {
     flex-direction: row-reverse;
 }
 
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 60px;
+    margin-left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+}
+
 .timeline-date {
     flex: 0 0 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
     text-align: center;
     font-weight: 600;
-    color: var(--accent-color);
-    padding: 0.5rem;
-    background: white;
-    border-radius: 20px;
-    border: 2px solid var(--accent-color);
-    margin: 0 2rem;
+    font-size: 0.9rem;
     height: fit-content;
     position: relative;
     z-index: 2;
@@ -382,136 +519,171 @@ section {
 .timeline-content {
     flex: 1;
     background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
 .timeline-content h3 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 .timeline-content h4 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .timeline-details {
     display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--text-light);
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .detail-item i {
-    color: var(--accent-color);
+    color: #667eea;
+    font-size: 1rem;
 }
 
 .course-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 20px;
+}
+
+.course-highlights h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
 }
 
 .course-tag {
-    background: var(--bg-section);
-    color: var(--accent-color);
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    margin: 4px 8px 4px 0;
+    border-radius: 12px;
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-/* Experience Section */
-.experience {
-    background: var(--bg-section);
+/* Thesis Section Styles */
+.thesis-section {
+    margin: 60px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-.experience-grid {
-    display: grid;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+.thesis-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-.experience-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.card-header {
+.thesis-header {
     display: flex;
     justify-content: space-between;
-    align-items: start;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
 }
 
-.card-header h3 {
-    color: var(--primary-color);
-    font-size: 1.2rem;
+.thesis-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
 }
 
-.card-date {
-    color: var(--accent-color);
+.thesis-date {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
     font-weight: 500;
+}
+
+.thesis-content {
+    position: relative;
+    z-index: 2;
+}
+
+.thesis-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.thesis-description {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.thesis-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.thesis-details .detail-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 0.9rem;
 }
 
-.experience-card h4 {
-    color: var(--text-light);
-    margin-bottom: 1rem;
+.thesis-details .detail-item i {
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.card-list {
-    list-style: none;
-    margin-bottom: 1.5rem;
-}
-
-.card-list li {
-    padding: 0.3rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.card-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-}
-
-.card-tags {
+.thesis-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
-.tag {
-    background: var(--bg-section);
-    color: var(--accent-color);
-    padding: 0.3rem 0.8rem;
+.keyword-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Skills Section */
@@ -779,6 +951,41 @@ section {
     }
 
     .contact-items {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .subsection-title {
+        font-size: 1.6rem;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    
+    .thesis-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .thesis-details {
         grid-template-columns: 1fr;
     }
 }
